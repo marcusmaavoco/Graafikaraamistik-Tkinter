@@ -1,0 +1,28 @@
+from tkinter import *
+
+aken = Tk()
+aken.title("Liiklusmark")
+aken.geometry("500x500")
+
+kangas = Canvas(aken, width=500, height=500, bg="white")
+kangas.pack()
+
+# sinine ring
+kangas.create_oval(50, 50, 450, 450, fill="blue", outline="white", width=4)
+
+# noolt 1
+kangas.create_arc(140, 140, 360, 360, start=45, extent=80, style=ARC,
+                  outline="white", width=20)
+kangas.create_polygon(162, 177, 174, 142, 200, 178, fill="white")
+
+# noolt 2
+kangas.create_arc(140, 140, 360, 360, start=165, extent=80, style=ARC,
+                  outline="white", width=20)
+kangas.create_polygon(231, 362, 194, 370, 213, 330, fill="white")
+
+# noolt 3
+kangas.create_arc(140, 140, 360, 360, start=285, extent=80, style=ARC,
+                  outline="white", width=20)
+kangas.create_polygon(357, 210, 382, 238, 338, 242, fill="white")
+
+aken.mainloop()

@@ -1,0 +1,43 @@
+from tkinter import *
+
+aken = Tk()
+aken.title("Lipp")
+aken.geometry("600x400")
+
+kangas = Canvas(aken, width=600, height=400, bg="white")
+kangas.pack()
+
+# punane riba
+kangas.create_rectangle(0, 133, 600, 267, fill="red")
+
+# vapp
+kangas.create_rectangle(250, 130, 350, 240, fill="red", outline="white", width=2)
+kangas.create_oval(250, 210, 350, 270, fill="red", outline="white", width=2)
+
+# muur
+kangas.create_rectangle(265, 210, 335, 245, fill="white")
+kangas.create_rectangle(285, 185, 315, 210, fill="white")
+kangas.create_rectangle(295, 220, 305, 245, fill="red")
+
+# muuri sakid
+kangas.create_rectangle(267, 204, 275, 210, fill="white")
+kangas.create_rectangle(281, 204, 289, 210, fill="white")
+kangas.create_rectangle(295, 204, 303, 210, fill="white")
+kangas.create_rectangle(309, 204, 317, 210, fill="white")
+kangas.create_rectangle(323, 204, 331, 210, fill="white")
+
+# voti ja moot
+kangas.create_line(275, 195, 325, 155, fill="yellow", width=4)
+kangas.create_oval(270, 190, 282, 202, outline="yellow", width=3)
+kangas.create_line(275, 155, 325, 195, fill="yellow", width=3)
+kangas.create_line(270, 152, 280, 160, fill="yellow", width=4)
+
+# tahed (ringidena)
+kangas.create_oval(275, 140, 285, 150, fill="yellow")
+kangas.create_oval(315, 140, 325, 150, fill="yellow")
+kangas.create_oval(257, 170, 267, 180, fill="yellow")
+kangas.create_oval(333, 170, 343, 180, fill="yellow")
+kangas.create_oval(265, 247, 275, 257, fill="yellow")
+kangas.create_oval(325, 247, 335, 257, fill="yellow")
+
+aken.mainloop()

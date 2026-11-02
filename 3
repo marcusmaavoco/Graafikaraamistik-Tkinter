@@ -1,0 +1,54 @@
+from tkinter import *
+
+aken = Tk()
+aken.title("Maja")
+aken.geometry("600x500")
+
+kangas = Canvas(aken, width=600, height=500, bg="white")
+kangas.pack()
+
+# korsten
+kangas.create_rectangle(410, 110, 445, 200, fill="brown", outline="black", width=2)
+
+# suits
+kangas.create_oval(417, 85, 437, 105, fill="gray", outline="")
+kangas.create_oval(421, 61, 449, 89, fill="gray", outline="")
+kangas.create_oval(430, 34, 466, 70, fill="gray", outline="")
+kangas.create_oval(441, 1, 489, 49, fill="gray", outline="")
+
+# katus
+kangas.create_polygon(130, 220, 300, 90, 470, 220, fill="red", outline="black", width=2)
+
+# sein
+kangas.create_rectangle(150, 220, 450, 430, fill="yellow", outline="black", width=2)
+
+# uks
+kangas.create_rectangle(270, 310, 330, 430, fill="brown", outline="black", width=2)
+kangas.create_oval(318, 370, 326, 378, fill="gold", outline="black")
+
+# aken 1
+kangas.create_rectangle(180, 245, 230, 295, fill="lightblue", outline="black", width=2)
+kangas.create_line(205, 245, 205, 295, fill="black", width=2)
+kangas.create_line(180, 270, 230, 270, fill="black", width=2)
+
+# aken 2
+kangas.create_rectangle(370, 245, 420, 295, fill="lightblue", outline="black", width=2)
+kangas.create_line(395, 245, 395, 295, fill="black", width=2)
+kangas.create_line(370, 270, 420, 270, fill="black", width=2)
+
+# aken 3
+kangas.create_rectangle(180, 330, 230, 380, fill="lightblue", outline="black", width=2)
+kangas.create_line(205, 330, 205, 380, fill="black", width=2)
+kangas.create_line(180, 355, 230, 355, fill="black", width=2)
+
+# aken 4
+kangas.create_rectangle(370, 330, 420, 380, fill="lightblue", outline="black", width=2)
+kangas.create_line(395, 330, 395, 380, fill="black", width=2)
+kangas.create_line(370, 355, 420, 355, fill="black", width=2)
+
+# poosas
+kangas.create_oval(85, 395, 135, 445, fill="green", outline="")
+kangas.create_oval(100, 385, 160, 445, fill="green", outline="")
+kangas.create_oval(133, 400, 177, 444, fill="green", outline="")
+
+aken.mainloop()

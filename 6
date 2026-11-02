@@ -1,0 +1,70 @@
+from tkinter import *
+import random
+
+aken = Tk()
+aken.title("Robot")
+aken.geometry("600x600")
+
+kangas = Canvas(aken, width=600, height=600, bg="black")
+kangas.pack()
+
+# tahed
+for i in range(40):
+    x = random.randint(0, 600)
+    y = random.randint(0, 450)
+    kangas.create_oval(x, y, x + 3, y + 3, fill="white")
+
+# kuu
+kangas.create_oval(-100, 450, 700, 800, fill="gray")
+kangas.create_oval(50, 500, 150, 540, fill="darkgray")
+kangas.create_oval(400, 480, 520, 530, fill="darkgray")
+
+# antenn
+kangas.create_line(300, 150, 300, 100, fill="silver", width=4)
+kangas.create_oval(290, 80, 310, 100, fill="red")
+
+# pea
+kangas.create_rectangle(240, 150, 360, 250, fill="lightgray", outline="blue", width=4)
+
+# silmad
+kangas.create_oval(260, 170, 290, 200, fill="cyan")
+kangas.create_oval(310, 170, 340, 200, fill="cyan")
+
+# suu
+kangas.create_line(270, 220, 270, 235, width=3)
+kangas.create_line(285, 220, 285, 235, width=3)
+kangas.create_line(300, 220, 300, 235, width=3)
+kangas.create_line(315, 220, 315, 235, width=3)
+kangas.create_line(330, 220, 330, 235, width=3)
+kangas.create_line(260, 227, 340, 227, width=3)
+
+# kael
+kangas.create_rectangle(285, 250, 315, 270, fill="blue")
+
+# keha
+kangas.create_rectangle(220, 270, 380, 420, fill="lightgray", outline="blue", width=4)
+
+# ekraan
+kangas.create_rectangle(240, 290, 360, 340, fill="black")
+kangas.create_line(240, 315, 360, 315, fill="cyan", width=2)
+
+# nupud
+kangas.create_oval(250, 360, 270, 380, fill="red")
+kangas.create_oval(280, 360, 300, 380, fill="yellow")
+kangas.create_oval(310, 360, 330, 380, fill="green")
+
+# kaed
+kangas.create_line(220, 300, 150, 350, 150, 400, fill="silver", width=12)
+kangas.create_oval(130, 400, 170, 440, fill="red")
+kangas.create_line(380, 300, 450, 250, 450, 200, fill="silver", width=12)
+kangas.create_oval(430, 160, 470, 200, fill="red")
+
+# jalad
+kangas.create_rectangle(250, 420, 270, 460, fill="blue")
+kangas.create_rectangle(330, 420, 350, 460, fill="blue")
+
+# rattad
+kangas.create_oval(230, 450, 290, 480, fill="gray")
+kangas.create_oval(310, 450, 370, 480, fill="gray")
+
+aken.mainloop()

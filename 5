@@ -1,0 +1,42 @@
+import tkinter as tk
+
+
+def vicsekFractals():
+    SUURUS = 400
+
+    root = tk.Tk()
+    root.title("Vicseki fraktaal")
+    root.resizable(False, False)
+
+    canvas = tk.Canvas(root, width=SUURUS, height=SUURUS,
+                       bg="white", highlightthickness=0)
+    canvas.pack()
+
+    def vicsek(x, y, suurus, sügavus):
+        # Baasjuht: täisruut (või ruut on väiksem kui 1 piksel)
+        if sügavus == 0 or suurus < 1:
+            canvas.create_rectangle(x, y, x + suurus, y + suurus,
+                                    fill="black", outline="")
+            return
+
+        kolmandik = suurus / 3
+        # 4 nurka + keskmine ruut (X-kuju)
+        for dx, dy in [(0, 0), (2, 0), (1, 1), (0, 2), (2, 2)]:
+            vicsek(x + dx * kolmandik, y + dy * kolmandik,
+                   kolmandik, sügavus - 1)
+
+    def joonista(sügavus):
+        canvas.delete("all")
+        vicsek(0, 0, SUURUS, sügavus)
+
+    def klahv(event):
+        if event.char.isdigit():
+            joonista(int(event.char))
+
+    root.bind("<Key>", klahv)
+
+    joonista(1)  # algne joonis
+    root.mainloop()
+
+
+vicsekFractals()

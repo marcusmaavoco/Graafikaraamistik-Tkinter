@@ -1,0 +1,47 @@
+from tkinter import *
+
+aken = Tk()
+aken.title("Malelaud")
+aken.geometry("520x520")
+
+kangas = Canvas(aken, width=520, height=520, bg="white")
+kangas.pack()
+
+# ruudud
+for rida in range(8):
+    for veerg in range(8):
+        x = 40 + veerg * 54
+        y = 40 + rida * 54
+        if (rida + veerg) % 2 == 0:
+            varv = "beige"
+        else:
+            varv = "darkgreen"
+        kangas.create_rectangle(x, y, x + 54, y + 54, fill=varv)
+
+# raam
+kangas.create_rectangle(40, 40, 472, 472, width=2)
+
+# tahed ja numbrid
+for i in range(8):
+    kangas.create_text(67 + i * 54, 20, text="ABCDEFGH"[i], font=("Arial", 12, "bold"))
+    kangas.create_text(67 + i * 54, 492, text="ABCDEFGH"[i], font=("Arial", 12, "bold"))
+    kangas.create_text(20, 67 + i * 54, text=str(8 - i), font=("Arial", 12, "bold"))
+    kangas.create_text(492, 67 + i * 54, text=str(8 - i), font=("Arial", 12, "bold"))
+
+# kabenupud
+for rida in range(8):
+    for veerg in range(8):
+        x = 67 + veerg * 54
+        y = 67 + rida * 54
+        if (rida + veerg) % 2 == 1:
+            if rida < 3:
+                kangas.create_oval(x - 21, y - 21, x + 21, y + 21, fill="black", width=2)
+                kangas.create_oval(x - 16, y - 16, x + 16, y + 16, fill="gray30")
+            elif rida > 4:
+                kangas.create_oval(x - 21, y - 21, x + 21, y + 21, fill="lightgray", width=2)
+                kangas.create_oval(x - 16, y - 16, x + 16, y + 16, fill="white")
+
+# kuninganna
+kangas.create_text(229, 229, text="♛", font=("Arial", 32))
+
+aken.mainloop()
